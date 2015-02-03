@@ -34,6 +34,12 @@
 			fill: none;
 			filter: url(#blur-small);
 		}
+		.haze {
+			fill:none;
+			stroke: red;
+			stroke-width: 16px;
+			filter: url(#blur);
+		}
 	</style>
 	<defs>
 		<clipPath id="eye-boundry">
@@ -58,16 +64,20 @@
 		</g>
 	</defs>
 	<g class="eye">
-		<circle class="sclera" cx="256" cy="256" r="256" />
-		<use transform="rotate(0 256 256)" xlink:href="#vein-group" />
-		<use transform="rotate(120 256 256)" xlink:href="#vein-group" />
-		<use transform="rotate(240 256 256)" xlink:href="#vein-group" />
-		<circle class="iris" cx="256" cy="256" r="126" />
-		<circle class="pupil" cx="256" cy="256" r="80" />
-		<g transform="rotate(-45 256 256)">
-			<circle class="glare-spot" cx="176" cy="256" r="24" />
-			<circle class="glare-spot" cx="336" cy="256" r="24" />
+		<g>
+			<animateTransform attributeName="transform" attributeType="XML" type="translate" dur="5s" repeatCount="indefinite" values="-32 0; 32 0; -32" />
+			<circle class="sclera" cx="256" cy="256" r="512" />
+			<use transform="rotate(0 256 256)" xlink:href="#vein-group" />
+			<use transform="rotate(120 256 256)" xlink:href="#vein-group" />
+			<use transform="rotate(240 256 256)" xlink:href="#vein-group" />
+			<circle class="iris" cx="256" cy="256" r="126" />
+			<circle class="pupil" cx="256" cy="256" r="80" />
+			<g transform="rotate(-45 256 256)">
+				<circle class="glare-spot" cx="176" cy="256" r="24" />
+				<circle class="glare-spot" cx="336" cy="256" r="24" />
+			</g>
 		</g>
+		<circle class="haze" cx="256" cy="256" r="240"/>
 	</g>
 	<circle class="outline" cx="256" cy="256" r="240" />
 	<circle class="outline outline-shadow" cx="256" cy="256" r="240" />
